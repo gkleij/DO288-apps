@@ -1,0 +1,72 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-05-28T16:07:17Z"
+    generation: 1
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: guusvanderkleij-gmail-com-quotes-dev
+    resourceVersion: "142824292"
+    selfLink: /apis/image.openshift.io/v1/namespaces/guusvanderkleij-gmail-com-quotes-dev/imagestreams/quotesapi
+    uid: 4d709d01-a0fd-11ea-a9dc-0a580a820004
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/guusvanderkleij-gmail-com-quotes-dev/quotesapi
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-eu2.prod.nextcle.com/guusvanderkleij-gmail-com-quotes-dev/quotesapi
+    tags:
+    - items:
+      - created: "2020-05-28T16:09:46Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/guusvanderkleij-gmail-com-quotes-dev/quotesapi@sha256:4233df2075b15378f5afbc63116f6443a7d04b051633d125cc37ddcd2b9880fe
+        generation: 1
+        image: sha256:4233df2075b15378f5afbc63116f6443a7d04b051633d125cc37ddcd2b9880fe
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2020-05-28T16:06:36Z"
+    creationTimestamp: "2020-05-28T16:06:36Z"
+    generation: 2
+    name: quotesdb
+    namespace: guusvanderkleij-gmail-com-quotes-dev
+    resourceVersion: "142822014"
+    selfLink: /apis/image.openshift.io/v1/namespaces/guusvanderkleij-gmail-com-quotes-dev/imagestreams/quotesdb
+    uid: 35015f83-a0fd-11ea-a168-0a580a810005
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: image-registry.openshift-image-registry.svc:5000/openshift/mysql:5.7
+      generation: 2
+      importPolicy: {}
+      name: "5.7"
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/guusvanderkleij-gmail-com-quotes-dev/quotesdb
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-eu2.prod.nextcle.com/guusvanderkleij-gmail-com-quotes-dev/quotesdb
+    tags:
+    - conditions:
+      - generation: 2
+        lastTransitionTime: "2020-05-28T16:06:36Z"
+        message: 'Internal error occurred: Get https://image-registry.openshift-image-registry.svc:5000/v2/:
+          x509: certificate signed by unknown authority'
+        reason: InternalError
+        status: "False"
+        type: ImportSuccess
+      items: null
+      tag: "5.7"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
